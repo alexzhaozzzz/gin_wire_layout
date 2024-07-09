@@ -1,0 +1,50 @@
+mode: local
+
+name: merchant
+version: v0.1
+
+zone: India
+
+server:
+  http:
+    host: 0.0.0.0
+    port: 8091
+
+jwt:
+  secret: secret
+  token_expire: 24
+  issuer: alex
+  sub: bz
+
+# 日志配置(使用zap&lumberjack)
+log:
+  level: debug
+  file-name: ./logs/web-serverx.log
+  time-format: '2006-01-02 15:04:05.000'
+  max-size: 500 #单个日志文件大小MB
+  max-backups: 7 #至多保留多少个日志文件
+  max-age: 7 #至多保留多少天的日志文件
+  compress: true
+  local-time: false
+  console: true  #是否打印到控制台,true打印到控制台，false记录到文件, 建议使用Docker时设置为true
+
+
+# 数据库配置-connect
+mysql-dbs:
+  merchant:
+    host: 192.168.152.129
+    port: 3306
+    user: root
+    password: 123456
+    database: merchant
+    max_idle: 20
+    max_open: 20
+    max_life_time: 300
+
+# 数据库配置-redisx
+redis-dbs:
+  merchant:
+    addr: 192.168.152.129:6379
+    password:
+    database: 0
+    max_active: 50
