@@ -9,7 +9,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/alexzhaozzzz/gin_wire_layout/pkg/util"
 	"net/http"
 	"os"
 	"os/signal"
@@ -22,6 +21,7 @@ import (
 
 	"github.com/alexzhaozzzz/gin_wire_layout/pkg/bootstrap"
 	"github.com/alexzhaozzzz/gin_wire_layout/pkg/colorx"
+	"github.com/alexzhaozzzz/gin_wire_layout/pkg/util"
 )
 
 // AppServer 代表当前服务端实例
