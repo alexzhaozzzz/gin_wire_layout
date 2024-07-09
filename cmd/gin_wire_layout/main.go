@@ -10,7 +10,7 @@ import (
 // 主程序入口
 func main() {
 	// 定义一个命令行Flag来指定配置文件路径
-	path := pflag.StringP("config", "c", "", "Path to the config file")
+	path := pflag.StringP("config", "c", "", "path to the config file")
 	pflag.Parse()
 
 	// 加载配置文件
